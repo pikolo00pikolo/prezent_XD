@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-image: repeating-linear-gradient(45deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(45deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(157.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(135deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(135deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, hsla(253,0%,98%,0.03) 0px, hsla(253,0%,98%,0.03) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgb(13, 8, 66),rgb(230, 168, 209));
+}
+
+
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-evenly;
+  align-items: center; /* Przesunięcie zawartości do góry */
+  flex-direction: column;
+}
+
+.teskt {
+  font-size: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: auto; /* Tekst będzie na górze */
+}
+
+.prezent {
+  height: 270px;
+  width: 270px;
+  background-image: url("mlym1.png");
+  background-size: cover;
+  align-self: center; /* Prezent będzie na środku */
+  position: relative;
+  align-items: center;
+}
+
+
+.prezent::after {
+  content: "";
+  position: absolute; /* Ustawienie pozycji absolutnej dla pseudo-elementu */
+  background-image: url("mlym.png");
+  height: inherit;
+  width: inherit;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity linear 1s, box-shadow linear 1s;
+  border-radius: 10%;
+  scale: 1.1;
+}
+
+.prezent:hover::after,.prezent:active::after {
+  opacity: 0;
+}
+
+.prezent:hover,.prezent:active {
+  box-shadow: 0 0 30px 3px aqua;
+
+}
+.tekst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 3rem;
+  text-align: center; /* Wyśrodkowanie tekstu w poziomie */
+  line-height: 1.5; /* Ustawienie wysokości wiersza dla lepszego wyglądu */
+  width: 80%; /* Ustawienie szerokości tekstu */
+}
